@@ -1,0 +1,20 @@
+@echo off
+set /p filename="Enter the name of file (without .java extension): "
+if exist %filename%.java (
+    echo File already exists.
+) else (
+     (
+        type nul > %filename%.java
+        echo. import java.util.Scanner^;
+        echo. class %filename% 
+        echo. ^{
+        echo.   public static void main^(String[] args^) ^{
+        echo.       Scanner scanner = new Scanner^(System.in^) ^;
+        echo.        System.out.println^(^"Enter something: ^"^)^;
+        echo.
+        echo.    ^}
+        echo ^}
+    )> %filename%.java
+    echo File created.
+    notepad %filename%.java
+)
