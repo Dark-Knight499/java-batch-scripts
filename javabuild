@@ -1,0 +1,7 @@
+@echo off
+set /p p=<path.txt
+set PATH=%p%
+echo %PATH%
+set /p filename="Enter the name of file (without .java extension): "
+javac %filename%.java && java %filename
+pause
