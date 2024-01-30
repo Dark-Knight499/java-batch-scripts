@@ -16,5 +16,5 @@ if exist %filename%.java (
         echo ^}
     )> %filename%.java
     echo File created.
-    notepad %filename%.java
+   %filename%.java
 )
